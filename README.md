@@ -1,5 +1,10 @@
 # Arduino library for reading from the LTC2440 ADC
 
+## Weird caveats
+Haven't figured how to handle the data ready flag on the LTC2440 yet so don't sample more than the programmed sampling rate. Additionally, I haven't implemented programmable sampling rates so you're limited to 880Hz by setting SDI to GND or 7Hz by setting SDI to VCC.
+
+The same sampling rate restriction applies to the .Tare(..) function, ie, pass >=2 into the millis_delay parameter.
+
 ## Wiring
 I'm using the DC570A evaluation board.
 
